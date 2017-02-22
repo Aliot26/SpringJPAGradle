@@ -18,5 +18,5 @@ public interface UserService {
 	 * @param name
 	 * @return user entity
 	 */
-	User findUserByName(String name);
+	User find(String name);
 }

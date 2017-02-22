@@ -53,7 +53,7 @@ public class UserController {
 	@RequestMapping("/users/{name}")
 	public User getUserByName(@PathVariable String name) {
 		LOGGER.info("Load user by name: {}", name);	
-		return userService.findUserByName(name);
+		return userService.find(name);
 	}
 
 }
