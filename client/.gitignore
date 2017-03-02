@@ -3,6 +3,3 @@
 node_modules/
 dist/
 typings/
-.gradle
-build/
-npm-debug.log

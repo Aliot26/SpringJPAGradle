@@ -4,9 +4,8 @@
   "scripts": {
     "build": "webpack --progress",
     "build:prod": "webpack -p --progress",
-    "server": "webpack-dev-server --inline --progress",
-    "postinstall": "typings install",
-    "start": "server"
+    "serve": "webpack-dev-server --inline --progress",
+    "postinstall": "typings install"
   },
   "dependencies": {
     "@angular/common": "2.4.0",
