@@ -20,7 +20,7 @@ import {Users} from './users';
                 </tr>
             </tbody>
         </table>
-    </div>`
+    </div>`    
 })
 export class GetusersComponent implements OnInit {
 

@@ -8,7 +8,8 @@ import {Component} from '@angular/core';
                         <a routerLink="/getusers"  routerLinkActive="active">&nbsp;Список пользователей&nbsp;</a>
                         <a routerLink="/adduser"  routerLinkActive="active">&nbsp;Добавить пользователя&nbsp;</a>
                 </nav>
-                <router-outlet></router-outlet>`
+                <router-outlet></router-outlet>`,
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
