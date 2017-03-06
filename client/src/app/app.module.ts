@@ -3,22 +3,23 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule}   from '@angular/forms';
 import {Routes, RouterModule} from '@angular/router';
 import {AppComponent}   from './app.component';
-import {GetusersComponent} from "./getusers.component";
-import {AdduserComponent} from "./adduser.component";
-import {UsersService} from './users.service';
-import {HomeComponent} from "./home.component";
-import {NotFoundComponent} from "./not-found.component";
+import {HttpModule} from "@angular/http";
+import {GetusersComponent} from "./users/getusers.component";
+import {AdduserComponent} from "./users/adduser.component";
+import {UsersService} from './users/users.service';
+import {HomeComponent} from "./users/home.component";
+import {NotFoundComponent} from "./users/not-found.component";
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent},
-    { path: 'getusers', component: GetusersComponent},
+    { path: 'users', component: GetusersComponent},
     { path: 'adduser', component: AdduserComponent},
     { path: '**', component: NotFoundComponent }
 ];
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+    imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
     declarations: [AppComponent, GetusersComponent, AdduserComponent, HomeComponent, NotFoundComponent],
     providers: [UsersService],
     bootstrap: [AppComponent]
