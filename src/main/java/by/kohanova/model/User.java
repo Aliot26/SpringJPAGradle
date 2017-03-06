@@ -12,13 +12,6 @@ public class User extends AbstractPersistable<Integer> {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Field of user ID
-	 */
-	@Id
-	@Column(name = "id")
-	public int id;
-
-	/**
 	 * Field of user name
 	 */
 	@Column(name = "name")
