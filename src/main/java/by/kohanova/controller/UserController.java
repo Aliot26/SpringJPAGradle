@@ -38,7 +38,7 @@ public class UserController {
 	 * Is used for getting list of users
 	 * @return list of users
 	 */
-	@RequestMapping("/users")
+	@RequestMapping("/usersAll")
 	public List<User> getUsers() {
 		LOGGER.info("Start getUsers method");
 		List<User> listOfUsers = userService.findAll();			

@@ -10,11 +10,11 @@ import {UsersService} from './users/users.service';
 import {HomeComponent} from "./users/home.component";
 import {NotFoundComponent} from "./users/not-found.component";
 
-const appRoutes: Routes =[
-    { path: '', component: HomeComponent},
-    { path: 'users', component: GetusersComponent},
-    { path: 'adduser', component: AdduserComponent},
-    { path: '**', component: NotFoundComponent }
+const appRoutes:Routes = [
+    {path: '', component: HomeComponent},
+    {path: 'users', component: GetusersComponent},
+    {path: 'adduser', component: AdduserComponent},
+    {path: '**', component: NotFoundComponent}
 ];
 
 

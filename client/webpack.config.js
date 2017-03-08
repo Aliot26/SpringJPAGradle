@@ -16,16 +16,16 @@ const loaders = {
 
 module.exports = {
     entry: {
+        main: './src/main.ts',
         polyfills: './src/polyfills.ts',
-        vendor: './src/vendor.ts',
-        main: './src/main.ts'
+        vendor: './src/vendor.ts'
     },
     output: {
         filename: '[name].js',
         path: path.resolve('./dist')
     },
     resolve: {
-        extensions: ['.ts', '.js', '.css', '.html']
+        extensions: ['.ts', '.js']
     },
     module: {
         loaders: [
