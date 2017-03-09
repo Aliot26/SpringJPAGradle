@@ -16,9 +16,9 @@ const loaders = {
 
 module.exports = {
     entry: {
-        main: './src/main.ts',
         polyfills: './src/polyfills.ts',
-        vendor: './src/vendor.ts'
+        vendor: './src/vendor.ts',
+        main: './src/main.ts'
     },
     output: {
         filename: '[name].js',
@@ -35,8 +35,7 @@ module.exports = {
     },
     plugins: [
         new CommonsChunkPlugin({
-            name: ['vendor', 'polyfills'],
-            minChunks: Infinity
+            name: ['vendor', 'polyfills']
         }),
         new HtmlWebpackPlugin({
             chunkSortMode: 'dependency',
