@@ -35,14 +35,14 @@ module.exports = {
     },
     plugins: [
         new CommonsChunkPlugin({
-            name: ['vendor']
-}),
-new HtmlWebpackPlugin({
-    chunkSortMode: 'dependency',
-    filename: 'index.html',
-    template: './src/public/index.html'
-})
-],
+            name: ['vendor', 'polyfills']
+        }),
+        new HtmlWebpackPlugin({
+            chunkSortMode: 'dependency',
+            filename: 'index.html',
+            template: './src/public/index.html'
+        })
+    ],
     devServer: {
         contentBase: './dist',
         port: 3000,
