@@ -14,6 +14,8 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan base-package="by.kohanova.service" />
+	<context:component-scan base-package="by.kohanova.security.service"/>
+    <context:component-scan base-package="by.kohanova.security.config"/>
 
 	<jpa:repositories base-package="by.kohanova.repository" entity-manager-factory-ref="emf"
                       transaction-manager-ref="transactionManager" />
