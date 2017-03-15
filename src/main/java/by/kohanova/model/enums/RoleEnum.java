@@ -2,7 +2,7 @@ package by.kohanova.model.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 
-public enum Authority implements GrantedAuthority{
+public enum RoleEnum implements GrantedAuthority{
 	ROLE_ADMIN,
     ROLE_PERSON,    
     GUEST;

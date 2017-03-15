@@ -1,6 +1,6 @@
 package by.kohanova.model.enums;
 
-public enum Status {
+public enum StatusEnum {
 	REQUEST,
     FRIENDSHIP,    
     REJECT;    

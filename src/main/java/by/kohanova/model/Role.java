@@ -1,6 +1,6 @@
 package by.kohanova.model;
 
-import by.kohanova.model.enums.Authority;
+import by.kohanova.model.enums.RoleEnum;
 import javax.persistence.*;
 
 /**
@@ -8,8 +8,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "roles")
-public class Role {
-
+public class Role {	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "role_id")
@@ -19,6 +19,6 @@ public class Role {
 	 * Field of role type
 	 */
 	@Enumerated(EnumType.STRING)
-	public Authority name;
+	public RoleEnum name;
 
 }
