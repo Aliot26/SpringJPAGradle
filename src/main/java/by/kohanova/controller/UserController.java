@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import by.kohanova.model.User;
-import by.kohanova.service.UserService;
+import by.kohanova.model.Users;
+import by.kohanova.service.UsersService;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ import java.util.List;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private UsersService userService;
 
 	final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
@@ -39,19 +39,19 @@ public class UserController {
 	 * @return list of users
 	 */
 	@RequestMapping("/users")
-	public List<User> getUsers() {
+	public List<Users> getUsers() {
 		LOGGER.info("Start getUsers method");
-		List<User> listOfUsers = userService.findAll();			
+		List<Users> listOfUsers = userService.findAll();			
 		return listOfUsers;
 	}
 	
 	/**
 	 * Is used for getting user by name
 	 * @param name - user name
-	 * @return {@link User} object
+	 * @return {@link Users} object
 	 */
 	@RequestMapping("/users/{name}")
-	public User getByName(@PathVariable String name) {
+	public Users getByName(@PathVariable String name) {
 		LOGGER.info("Load user by name: {}", name);	
 		return userService.find(name);
 	}

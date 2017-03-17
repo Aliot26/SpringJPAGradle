@@ -1,25 +1,54 @@
 package by.kohanova.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.*;
-import org.springframework.data.jpa.domain.AbstractPersistable;
+
+import org.springframework.security.core.GrantedAuthority;
+
+import by.kohanova.model.enums.RoleEnum;
 
 /**
- * User entity class
+ * Role entity class
  */
 @Entity
-@Table(name = "users")
-public class User extends AbstractPersistable<Integer> {
-	private static final long serialVersionUID = 1L;
+@Table(name = "user")
+public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_id")
+	public Long userId;
 
 	/**
-	 * Field of user name
+	 * Field of person's login
 	 */
-	@Column(name = "name")
-	public String name;
+	@Column(name = "login")
+	public String login;
 
 	/**
-	 * Field of user age
+	 * Field of person's password
 	 */
-	@Column(name = "age")
-	public Integer age;
+	@Column(name = "password")
+	public String password;
+
+	/**
+	 * ManyToMany relation to {@link Role} entities
+	 */
+	@ManyToMany(targetEntity = Role.class, fetch = FetchType.EAGER)
+	@JoinTable(name = "roles", joinColumns = { @JoinColumn(name = "user_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "role_id") })
+	private List<Role> roles;
+
+	/**
+	 * Getter method returns {@link Users}'s collection of role names
+	 */
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		List<RoleEnum> currentRoles = new ArrayList<>();
+		for (Role role : roles)
+			currentRoles.add(role.name);
+		return currentRoles;
+	}
 }

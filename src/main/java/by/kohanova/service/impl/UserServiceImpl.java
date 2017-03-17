@@ -1,32 +1,22 @@
 package by.kohanova.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import by.kohanova.model.User;
 import by.kohanova.repository.UserRepository;
 import by.kohanova.service.UserService;
 
 /**
- * UserService interface implementation
+ * Implementation of {@link UserService} service
  */
-@Service()
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService{
 
-	/**
-	 * Injects UserRepository bean
-	 */
 	@Autowired
-	private final UserRepository userRepository;
-
-	/**
-	 * Constructor for UserRepository setting
-	 * @param userRepository
-	 */
-	public UserServiceImpl(UserRepository userRepository) {
-		this.userRepository = userRepository;
+    private UserRepository userRepository;
+	
+	@Override
+	public User find(String login) {
+		return userRepository.find(login);
 	}
 
 	@Override
@@ -34,8 +24,4 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findAll();
 	}
 
-	@Override
-	public User find(String name) {
-		return userRepository.find(name);
-	}
 }

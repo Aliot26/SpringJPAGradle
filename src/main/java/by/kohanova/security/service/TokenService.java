@@ -1,5 +1,5 @@
 package by.kohanova.security.service;
 
 public interface TokenService {
-	String generateToken(String username, String password);
+	String generateToken(String login, String password);
 }
