@@ -10,7 +10,7 @@ export class UsersService {
     };
 
     getUsers():Promise<Users[]> {
-        return this.http.get('users')
+        return this.http.get('usersAll')
             .toPromise()
             .then(responce => responce.json())
             .catch(this.handleError);

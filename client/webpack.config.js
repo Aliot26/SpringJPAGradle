@@ -35,12 +35,11 @@ module.exports = {
     },
     plugins: [
         new CommonsChunkPlugin({
-            name: ['vendor']
+            name: ['vendor', 'polyfills']
 }),
 new HtmlWebpackPlugin({
     chunkSortMode: 'dependency',
-    filename: 'index.html',
-    template: './src/public/index.html'
+    template: './src/index.html'
 })
 ],
     devServer: {
